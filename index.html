@@ -176,8 +176,11 @@
   @media(max-width:900px){
     .split{grid-template-columns:1fr;gap:36px}
     .step-grid{grid-template-columns:1fr}
-    .bento{grid-template-columns:1fr 1fr;grid-auto-rows:auto}
+    .bento{grid-template-columns:1fr 1fr;grid-auto-rows:auto;align-items:start}
     .b-feature{grid-column:1 / -1;grid-row:auto;min-height:240px}
+    .tile .foot{margin-top:12px}
+    .tile .stat{margin-bottom:0}
+    .tile.accent .lab{white-space:nowrap;font-size:clamp(14px,4.4vw,18px)}
     .foot-grid{grid-template-columns:1fr;gap:26px}
     .nav .phone{display:none}
     .cta-band{padding:40px 26px}
@@ -205,8 +208,7 @@
     section.pad{padding:56px 0}
     .terms-list li{padding:16px 14px}
     .bento{gap:12px}
-    .tile{padding:22px}
-    .tile .stat{margin-bottom:14px}
+    .tile{padding:18px}
   }
 </style>
 </head>
@@ -291,8 +293,8 @@
       <div class="tile">
         <div class="stat display">1<span>-Day</span></div>
         <div class="foot">
-          <div class="lab">Install, next-day use</div>
-          <div class="sub">Coated in a single day — back in service the very next.</div>
+          <div class="lab">Install</div>
+          <div class="sub">Your whole garage coated start to finish in a single day.</div>
         </div>
       </div>
       <div class="tile">
@@ -312,8 +314,8 @@
       <div class="tile accent">
         <div class="badge">🎖️</div>
         <div class="foot">
-          <div class="lab">Veteran owned &amp; trusted</div>
-          <div class="sub">Local craftsmanship serving East Valley homeowners with pride.</div>
+          <div class="lab">Veteran Owned</div>
+          <div class="sub">Local craftsmanship, East Valley proud.</div>
         </div>
       </div>
     </div>
