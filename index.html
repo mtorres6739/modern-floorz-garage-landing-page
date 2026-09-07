@@ -85,13 +85,47 @@
   .offer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 34px;padding:22px 0;text-align:center;font-weight:700}
   .offer b{font-family:'Barlow Condensed',sans-serif;font-size:24px;letter-spacing:1px}
 
-  /* Benefits */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .card{background:var(--white);border:1px solid #eef1f5;border-radius:var(--radius);padding:30px;transition:transform .18s,box-shadow .18s}
-  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-  .ico{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-size:26px;margin-bottom:16px;background:rgba(12,131,242,.1)}
-  .card h4{font-size:20px;color:var(--blue-dark);margin-bottom:8px}
-  .card p{color:#5b6675;font-size:15px}
+  /* Why — Bento grid */
+  .bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:192px;gap:18px}
+  .tile{position:relative;display:flex;flex-direction:column;border-radius:20px;padding:26px;border:1px solid #eef1f5;background:#fff;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}
+  .tile:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .tile .stat{font-family:'Barlow Condensed',sans-serif;font-size:clamp(42px,5.2vw,60px);line-height:.86;color:var(--blue-dark);letter-spacing:.5px}
+  .tile .stat span{color:var(--orange)}
+  .tile .badge{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;font-size:24px;background:rgba(12,131,242,.1)}
+  .tile .foot{margin-top:auto}
+  .tile .lab{font-weight:800;color:var(--blue-dark);font-size:18px;margin-top:14px}
+  .tile .sub{color:#5b6675;font-size:14px;margin-top:5px;line-height:1.5}
+  .tile.accent{background:linear-gradient(150deg,#ffffff 0%,#fff4e8 100%);border-color:#ffe6cd}
+  .tile.accent .badge{background:rgba(245,130,32,.16)}
+
+  .b-feature{grid-column:span 2;grid-row:span 2;color:#fff;justify-content:flex-end;border:none;padding:34px}
+  .b-feature:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,31,60,.18) 0%,rgba(10,31,60,.5) 42%,rgba(10,31,60,.95) 100%),url('hero.jpg') center/cover;z-index:0}
+  .b-feature>*{position:relative;z-index:2}
+  .b-feature .shine{position:absolute;top:-40%;left:-30%;width:65%;height:180%;background:linear-gradient(115deg,transparent 43%,rgba(255,255,255,.16) 50%,transparent 57%);z-index:1;transform:translateX(0);transition:transform .9s ease}
+  .b-feature:hover .shine{transform:translateX(360%)}
+  .b-feature .kick{font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#ffd9b3;font-size:13px}
+  .b-feature .huge{font-family:'Barlow Condensed',sans-serif;font-size:clamp(76px,10vw,138px);line-height:.8;margin:4px 0 6px;text-shadow:0 10px 40px rgba(0,0,0,.35)}
+  .b-feature .huge span{color:var(--orange)}
+  .b-feature h4{font-size:23px;margin-bottom:6px}
+  .b-feature p{color:#cdddf1;font-size:15px;max-width:360px}
+
+  /* Polyaspartic vs Epoxy comparison */
+  .vs-wrap{margin-top:34px}
+  .vs-title{text-align:center;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:1px;color:var(--blue-dark);font-size:clamp(24px,3.4vw,34px);margin-bottom:18px}
+  .vs-title b{color:var(--orange)}
+  .vs{background:#fff;border:1px solid #eef1f5;border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+  .vs-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr}
+  .vs-grid>div{padding:16px 20px;display:flex;align-items:center;gap:8px;border-top:1px solid #eef1f5}
+  .vs-grid .h{border-top:none;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.5px;font-size:21px;justify-content:center}
+  .vs-grid .h.hlabel{justify-content:flex-start;color:var(--grey);font-size:12px;letter-spacing:2px;font-family:'Manrope',sans-serif;font-weight:800}
+  .vs-grid .h.poly{background:var(--blue-dark);color:#fff}
+  .vs-grid .h.epoxy{background:var(--mist);color:#8090a2}
+  .vs-grid .label{font-weight:700;color:var(--blue-dark);font-size:15px}
+  .vs-grid .val{justify-content:center;text-align:center;font-size:14px;font-weight:700;line-height:1.35}
+  .vs-grid .val.poly{color:#15a34a}
+  .vs-grid .val.poly:before{content:"✓";margin-right:6px;font-weight:800}
+  .vs-grid .val.epoxy{color:#b0483a;font-weight:600;background:#fcfcfd}
+  .vs-grid .val.epoxy:before{content:"✕";margin-right:6px;opacity:.75}
 
   /* Steps */
   .steps{background:var(--mist)}
@@ -140,7 +174,9 @@
 
   @media(max-width:900px){
     .split{grid-template-columns:1fr;gap:36px}
-    .cards,.step-grid{grid-template-columns:1fr}
+    .step-grid{grid-template-columns:1fr}
+    .bento{grid-template-columns:1fr 1fr;grid-auto-rows:172px}
+    .b-feature{grid-column:span 2;grid-row:span 2}
     .foot-grid{grid-template-columns:1fr;gap:26px}
     .nav .phone{display:none}
     .cta-band{padding:40px 26px}
@@ -148,10 +184,19 @@
   @media(max-width:640px){
     .hero-center{padding:56px 0 62px}
     .hero:before{background-position:center 52%}
+    .vs-grid{grid-template-columns:1.15fr .95fr .95fr}
+    .vs-grid>div{padding:13px 9px;gap:5px}
+    .vs-grid .h{font-size:15px}
+    .vs-grid .h.hlabel{font-size:10px;letter-spacing:1px}
+    .vs-grid .label{font-size:12px}
+    .vs-grid .val{font-size:11.5px;font-weight:700}
+    .vs-grid .val.poly:before,.vs-grid .val.epoxy:before{display:block;margin:0 auto 2px}
   }
   @media(max-width:520px){
     section.pad{padding:56px 0}
     .terms-list li{padding:16px 14px}
+    .bento{grid-auto-rows:150px;gap:12px}
+    .tile{padding:20px}
   }
 </style>
 </head>
@@ -225,36 +270,80 @@
       <h2>A garage floor built to outlast epoxy</h2>
       <p>Powered by Sparta-Aspartic technology — a premium polyaspartic coating engineered to be faster, stronger, and better than traditional epoxy.</p>
     </div>
-    <div class="cards">
-      <div class="card">
-        <div class="ico">💪</div>
-        <h4>20&times; Stronger Than Epoxy</h4>
-        <p>A tougher, longer-lasting bond that stands up to daily garage abuse for years to come.</p>
+    <div class="bento">
+      <div class="tile b-feature">
+        <span class="shine"></span>
+        <div class="kick">The Sparta-Aspartic difference</div>
+        <div class="huge display">20<span>&times;</span></div>
+        <h4>Stronger than epoxy</h4>
+        <p>A tougher, longer-lasting bond that shrugs off hot tires, scuffs, and daily garage abuse for years to come.</p>
       </div>
-      <div class="card">
-        <div class="ico">⏱️</div>
-        <h4>1-Day Install, Next-Day Use</h4>
-        <p>We coat your garage in a single day — with next-day return to service, so you're back in fast.</p>
+      <div class="tile">
+        <div class="stat display">1<span>-Day</span></div>
+        <div class="foot">
+          <div class="lab">Install, next-day use</div>
+          <div class="sub">Coated in a single day — back in service the very next.</div>
+        </div>
       </div>
-      <div class="card">
-        <div class="ico">☀️</div>
-        <h4>UV-Stable &amp; Non-Yellowing</h4>
-        <p>Holds its color and clarity under sunlight — no ambering or fading over time.</p>
+      <div class="tile">
+        <div class="stat display">Life<span>time</span></div>
+        <div class="foot">
+          <div class="lab">Warranty included</div>
+          <div class="sub">Protected for as long as you own your garage.</div>
+        </div>
       </div>
-      <div class="card">
-        <div class="ico">🤸</div>
-        <h4>Flexible &amp; Abrasion Resistant</h4>
-        <p>Flexes with your slab and shrugs off scuffs, scrapes, hot tires, and heavy wear.</p>
+      <div class="tile">
+        <div class="stat display">0<span>%</span></div>
+        <div class="foot">
+          <div class="lab">Yellowing</div>
+          <div class="sub">UV-stable finish that never ambers or fades in the sun.</div>
+        </div>
       </div>
-      <div class="card">
-        <div class="ico">✨</div>
-        <h4>Professional, Lasting Finish</h4>
-        <p>A showroom-quality, high-gloss surface that's easy to clean and looks great for years.</p>
+      <div class="tile accent">
+        <div class="badge">🎖️</div>
+        <div class="foot">
+          <div class="lab">Veteran owned &amp; trusted</div>
+          <div class="sub">Local craftsmanship serving East Valley homeowners with pride.</div>
+        </div>
       </div>
-      <div class="card">
-        <div class="ico">🎖️</div>
-        <h4>Veteran Owned &amp; Trusted</h4>
-        <p>Local, veteran-owned craftsmanship serving East Valley homeowners with pride.</p>
+    </div>
+
+    <div class="vs-wrap">
+      <div class="vs-title">Polyaspartic <b>vs.</b> old-school epoxy</div>
+      <div class="vs">
+        <div class="vs-grid">
+          <div class="h hlabel">Head-to-head</div>
+          <div class="h poly">Modern Polyaspartic</div>
+          <div class="h epoxy">Traditional Epoxy</div>
+
+          <div class="label">Durability</div>
+          <div class="val poly">20&times; stronger bond</div>
+          <div class="val epoxy">Cracks &amp; peels</div>
+
+          <div class="label">Install time</div>
+          <div class="val poly">1 day</div>
+          <div class="val epoxy">2–3 days</div>
+
+          <div class="label">In the sun</div>
+          <div class="val poly">Never yellows</div>
+          <div class="val epoxy">Ambers &amp; fades</div>
+
+          <div class="label">Flexibility</div>
+          <div class="val poly">Flexes with slab</div>
+          <div class="val epoxy">Rigid, chips off</div>
+
+          <div class="label">Hot tires &amp; scuffs</div>
+          <div class="val poly">Shrugs it off</div>
+          <div class="val epoxy">Lifts &amp; marks</div>
+
+          <div class="label">Finish &amp; cleanup</div>
+          <div class="val poly">Showroom gloss</div>
+          <div class="val epoxy">Dulls over time</div>
+
+          <div class="label">Warranty</div>
+          <div class="val poly">Lifetime</div>
+          <div class="val epoxy">Limited</div>
+        </div>
       </div>
     </div>
   </div>
