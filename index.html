@@ -194,11 +194,9 @@
     .vs-grid .val.poly{background:rgba(21,163,74,.07)}
     .vs-grid .val.epoxy{background:rgba(176,72,58,.06)}
     .vs-grid .val.poly:before,.vs-grid .val.epoxy:before{display:inline;margin-right:5px}
-    /* Offer strip → balanced 2x2 grid */
-    .offer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:6px 4%}
-    .offer .wrap span{display:flex;align-items:center;justify-content:center;text-align:center;gap:7px;font-size:14px;padding:16px 10px;line-height:1.3}
-    .offer .wrap span:nth-child(odd){border-right:1px solid rgba(255,255,255,.28)}
-    .offer .wrap span:nth-child(1),.offer .wrap span:nth-child(2){border-bottom:1px solid rgba(255,255,255,.28)}
+    /* Offer strip → balanced 2x2 grid with a clean, aligned divider cross */
+    .offer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;padding:0;background:rgba(255,255,255,.3)}
+    .offer .wrap span{background:var(--orange);display:flex;align-items:center;justify-content:center;text-align:center;gap:7px;font-size:14px;padding:18px 10px;line-height:1.3}
     .offer b{font-size:20px}
   }
   @media(max-width:520px){
