@@ -155,6 +155,23 @@
   .terms-list span{color:#5b6675;font-size:15px}
   .terms-note{text-align:center;color:#8090a2;font-size:13px;margin-top:20px}
 
+  /* Color options */
+  .colors{background:linear-gradient(135deg,var(--blue-dark),#0d2c56);position:relative;overflow:hidden}
+  .colors:after{content:"";position:absolute;width:420px;height:420px;background:radial-gradient(circle,rgba(245,130,32,.22),transparent 70%);top:-160px;left:-120px;pointer-events:none}
+  .colors .wrap{position:relative}
+  .colors .sec-head h2{color:#fff}
+  .colors .sec-head p{color:#c7d6ec}
+  .board-grid{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:start;max-width:900px;margin:0 auto}
+  .board-grid img{width:100%;height:auto;display:block;filter:drop-shadow(0 20px 44px rgba(0,0,0,.5))}
+  .chip-names{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:860px;margin:46px auto 0}
+  .chip-names span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#e8f0fb;font-weight:700;font-size:13.5px;letter-spacing:.3px;padding:8px 15px;border-radius:999px}
+  .colors .note{text-align:center;color:#9fb4d2;font-size:15px;margin-top:28px}
+  @media(max-width:640px){
+    .board-grid{grid-template-columns:1fr;gap:28px;max-width:400px}
+    .chip-names{gap:8px;margin-top:34px}
+    .chip-names span{font-size:12.5px;padding:7px 13px}
+  }
+
   /* CTA band */
   .cta-band{background:linear-gradient(135deg,var(--blue-dark),#0d2c56);color:#fff;border-radius:26px;padding:56px;text-align:center;position:relative;overflow:hidden}
   .cta-band:after{content:"";position:absolute;width:340px;height:340px;background:radial-gradient(circle,rgba(245,130,32,.4),transparent 70%);top:-120px;right:-80px}
@@ -403,6 +420,25 @@
       </ul>
       <a class="btn btn-primary btn-lg" href="#book" style="margin-top:22px">Claim This Offer</a>
     </div>
+  </div>
+</section>
+
+<!-- COLOR OPTIONS -->
+<section class="pad colors" id="colors">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Color options</span>
+      <h2>Pick your chip blend</h2>
+      <p>Your floor is finished with premium Prestige decorative chip blends. Browse the samples below and tell us your favorite at your free estimate.</p>
+    </div>
+    <div class="board-grid">
+      <img src="chips-board-1.webp" width="900" height="1008" loading="lazy" decoding="async" alt="Prestige chip blend sample board: Cabin Fever, Creekbed, Gravel, Domino, Nightfall, Orbit, Outback, Shoreline and Tidal Wave quarter-inch blends." />
+      <img src="chips-board-2.webp" width="900" height="999" loading="lazy" decoding="async" alt="Prestige chip blend sample board: Wombat, Raven, Coyote, Basalt, Carbon, Schist, Snowbowl, Sandstone Hybrid and Pumice quarter-inch blends." />
+    </div>
+    <div class="chip-names">
+      <span>Cabin Fever</span><span>Creekbed</span><span>Gravel</span><span>Domino</span><span>Nightfall</span><span>Orbit</span><span>Outback</span><span>Shoreline</span><span>Tidal Wave</span><span>Wombat</span><span>Raven</span><span>Coyote</span><span>Basalt</span><span>Carbon</span><span>Schist</span><span>Snowbowl</span><span>Sandstone Hybrid</span><span>Pumice</span>
+    </div>
+    <p class="note">18 blends to choose from. Colors shown are samples &mdash; actual floors may vary slightly.</p>
   </div>
 </section>
 
